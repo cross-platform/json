@@ -19526,6 +19526,10 @@ class serializer
             return;
         }
 
+        std::ptrdiff_t len = std::sprintf(number_buffer.data(), "%.3f", x);
+        o->write_characters(number_buffer.data(), static_cast<std::size_t>(len));
+        return;
+
         // If number_float_t is an IEEE-754 single or double precision number,
         // use the Grisu2 algorithm to produce short numbers which are
         // guaranteed to round-trip, using strtof and strtod, resp.
