@@ -19526,7 +19526,7 @@ class serializer
             return;
         }
 
-        std::ptrdiff_t len = std::sprintf(number_buffer.data(), "%.3f", x);
+        std::ptrdiff_t len = std::sprintf(number_buffer.data(), "%.8f", x);
         while (number_buffer.data()[len-1] == '0' || number_buffer.data()[len-1] == '.')
         {
             --len;
